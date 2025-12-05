@@ -219,6 +219,7 @@
   <p>Descubre los mejores sabores de nuestros productos</p>
 </div>
 
+
 <!-- PRODUCTOS -->
 <div class="contenedor-lista">
   <div class="producto-fila">
@@ -237,6 +238,7 @@
     </div>
   </div>
 </div>
+
 
 <!-- OFERTAS -->
 <section class="seccion-catalogo">
@@ -269,20 +271,23 @@
   </div>
 </section>
 
-<!-- FORMULARIO -->
+
+<!-- FORMULARIO CONECTADO -->
 <section class="contacto-seccion">
   <div class="contenedor-form">
     <h2>Únete o Haz tu Pedido</h2>
 
-    <form id="formulario">
+    <!-- FORMULARIO A GOOGLE SHEETS -->
+    <form method="POST" action="AQUI_VA_TU_URL">
+
       <label for="cliente">Tu Nombre:</label>
-      <input type="text" id="cliente" required>
+      <input type="text" id="cliente" name="Nombre" required>
 
       <label for="contacto">Teléfono o Celular:</label>
-      <input type="tel" id="contacto" required>
+      <input type="tel" id="contacto" name="Telefono" required>
 
       <label for="tipo">Me interesa:</label>
-      <select id="tipo">
+      <select id="tipo" name="Interes">
         <option>Comprar un producto de la oferta</option>
         <option>Ver catálogo completo</option>
         <option>Iniciar mi negocio propio</option>
@@ -290,32 +295,11 @@
 
       <button type="submit">Enviar Información</button>
     </form>
+
   </div>
 </section>
 
 <footer>© 2025 Oreo México</footer>
-
-<!-- SCRIPT PARA ENVIAR A GOOGLE SHEETS -->
-<script>
-const WEBHOOK_URL = "TU_URL_AQUI"; // ← Pega la URL de Google Apps Script
-
-document.getElementById("formulario").addEventListener("submit", function(e) {
-  e.preventDefault();
-
-  const data = {
-    nombre: document.getElementById("cliente").value,
-    telefono: document.getElementById("contacto").value,
-    interes: document.getElementById("tipo").value
-  };
-
-  fetch(WEBHOOK_URL, {
-    method: "POST",
-    body: JSON.stringify(data)
-  })
-  .then(() => alert("Datos enviados correctamente ✔"))
-  .catch(() => alert("Ocurrió un error ❌"));
-});
-</script>
 
 </body>
 </html>
