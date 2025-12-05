@@ -14,6 +14,7 @@
     color: #0C8A2B;
   }
 
+  /* ----- BARRA SUPERIOR ----- */
   nav {
     background: #87D9ED;
     padding: 15px 40px;
@@ -88,6 +89,7 @@
   .info-prod p {
     margin: 0;
     font-size: 14px;
+    line-height: 1.4;
   }
 
   .seccion-catalogo {
@@ -103,7 +105,7 @@
     margin-bottom: 30px;
     text-transform: uppercase;
     letter-spacing: 1px;
-    border-bottom: 2px solid #ab47bc;
+    border-bottom: 2px solid #ab47bc; 
     display: inline-block;
     padding-bottom: 10px;
   }
@@ -118,7 +120,7 @@
   .producto-mini {
     background: white;
     border: 1px solid #ddd;
-    width: 200px;
+    width: 200px; 
     padding: 15px;
     border-radius: 8px;
     text-align: center;
@@ -196,6 +198,12 @@
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  button:hover {
+    background: #ba68c8;
   }
 
   footer {
@@ -203,6 +211,7 @@
     padding: 20px;
     background: #5411D9;
     color: #fff;
+    font-size: 12px;
   }
 </style>
 </head>
@@ -219,19 +228,17 @@
   <p>Descubre los mejores sabores de nuestros productos</p>
 </div>
 
-
-<!-- PRODUCTOS -->
 <div class="contenedor-lista">
   <div class="producto-fila">
-    <img src="https://cdn.shopify.com/s/files/1/0558/7366/7206/files/Java-Chip.png?v=1759361131&width=600&height=600&crop=center">
+    <img src="https://cdn.shopify.com/s/files/1/0558/7366/7206/files/Java-Chip.png?v=1759361131&width=600&height=600&crop=center" alt="Galletas">
     <div class="info-prod">
       <h3>Temporada</h3>
-      <p>Regala sonrisas únicas en esta temporada.</p>
+      <p>Regala sonrisas unicas en esta temporada.</p>
     </div>
   </div>
 
   <div class="producto-fila">
-    <img src="https://cdn.shopify.com/s/files/1/0558/7366/7206/files/Cakesters_Original.png?v=1759355634&width=600&height=600&crop=center">
+    <img src="https://cdn.shopify.com/s/files/1/0558/7366/7206/files/Cakesters_Original.png?v=1759355634&width=600&height=600&crop=center" alt="Caketers">
     <div class="info-prod">
       <h3>CAKETERS</h3>
       <p>Diferentes sabores y diferentes tamaños.</p>
@@ -239,46 +246,42 @@
   </div>
 </div>
 
-
-<!-- OFERTAS -->
 <section class="seccion-catalogo">
   <h2>Ofertas del Mes</h2>
-
+  
   <div class="catalogo-grid">
     <div class="producto-mini">
-      <img src="https://cdn.shopify.com/s/files/1/0558/7366/7206/files/OREOiDGraduation-CookieTin-1.png?v=1761669896&width=800&height=800&crop=center">
+      <img src="https://cdn.shopify.com/s/files/1/0558/7366/7206/files/OREOiDGraduation-CookieTin-1.png?v=1761669896&width=800&height=800&crop=center" alt="Galletas">
       <h4>OREOiD Holiday Cookie Tin</h4>
       <span class="precio">$350.00</span>
     </div>
 
     <div class="producto-mini">
-      <img src="https://cdn.shopify.com/s/files/1/0558/7366/7206/files/OREO-Fudge-Less-Christmas-Tin-12CT-Cookies.png?v=1762369894&width=1200&height=1200&crop=center">
+      <img src="https://cdn.shopify.com/s/files/1/0558/7366/7206/files/OREO-Fudge-Less-Christmas-Tin-12CT-Cookies.png?v=1762369894&width=1200&height=1200&crop=center" alt="Caja de galletas">
       <h4>OREOiD Fudge-less Holiday Cookie Tin</h4>
       <span class="precio">$520.00</span>
     </div>
 
     <div class="producto-mini">
-      <img src="https://cdn.shopify.com/s/files/1/0558/7366/7206/files/OREOiD_-_Holidays_12ct_-_Red_Box-5.png?v=1761935529&width=1000&height=1000&crop=center">
+      <img src="https://cdn.shopify.com/s/files/1/0558/7366/7206/files/OREOiD_-_Holidays_12ct_-_Red_Box-5.png?v=1761935529&width=1000&height=1000&crop=center" alt="Cajas de galletas">
       <h4>OREOiD Holiday Cookies Red Box</h4>
       <span class="precio">$690.00</span>
     </div>
 
     <div class="producto-mini">
-      <img src="https://cdn.shopify.com/s/files/1/0558/7366/7206/files/OREOiD_-_Holidays_12ct_-_Blue_Box_1_1.png?v=1761935530&width=1000&height=1000&crop=center">
+      <img src="https://cdn.shopify.com/s/files/1/0558/7366/7206/files/OREOiD_-_Holidays_12ct_-_Blue_Box_1_1.png?v=1761935530&width=1000&height=1000&crop=center" alt="Kit de galletas">
       <h4>OREOiD Holidays Cookie Blue Box</h4>
       <span class="precio">$780.00</span>
     </div>
   </div>
 </section>
 
-
-<!-- FORMULARIO CONECTADO -->
 <section class="contacto-seccion">
   <div class="contenedor-form">
     <h2>Únete o Haz tu Pedido</h2>
 
-    <!-- FORMULARIO A GOOGLE SHEETS -->
-    <form method="POST" action="AQUI_VA_TU_URL">
+    <!-- FORMULARIO CONECTADO A GOOGLE SHEETS -->
+    <form method="POST" action="https://script.google.com/macros/s/AKfycby8ftqlift6x5MNBGz0I0MmX0ALJS-7aA7-H8ApP9l6DSjQMVm4UvLwEn3Y4TW9r4l-sg/exec">
 
       <label for="cliente">Tu Nombre:</label>
       <input type="text" id="cliente" name="Nombre" required>
@@ -295,11 +298,12 @@
 
       <button type="submit">Enviar Información</button>
     </form>
-
   </div>
 </section>
 
-<footer>© 2025 Oreo México</footer>
+<footer>
+  © 2024 OREO México
+</footer>
 
 </body>
 </html>
