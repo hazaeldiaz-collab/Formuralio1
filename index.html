@@ -6,23 +6,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
-  body {
-    font-family: "Verdana", sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #570EE8;
-    color: #0C8A2B;
-  }
-
-  nav {
-    background: #87D9ED;
-    padding: 15px 40px;
-    border-bottom: 4px solid #660C8A;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
+  body { font-family: "Verdana", sans-serif; margin: 0; padding: 0; background-color: #570EE8; color: #0C8A2B; }
+  nav { background: #87D9ED; padding: 15px 40px; border-bottom: 4px solid #660C8A; display: flex; justify-content: space-between; align-items: center; }
   nav h1 { color: #030101; margin: 0; font-size: 28px; font-style: italic; }
   nav span { font-weight: bold; color: #E0103D; font-size: 14px; }
 
@@ -31,46 +16,27 @@
   .banner p { font-size: 18px; margin: 0; opacity: 0.9; }
 
   .contenedor-lista { max-width: 800px; margin: 40px auto; padding: 0 20px; }
-  .producto-fila { background: white; margin-bottom: 20px; padding: 20px; border-radius: 50px;
-    display: flex; align-items: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
-
-  .producto-fila img { width: 120px; height: 120px; object-fit: cover; border-radius: 50%;
-    border: 4px solid #e1bee7; margin-right: 25px; }
-
+  .producto-fila { background: white; margin-bottom: 20px; padding: 20px; border-radius: 50px; display: flex; align-items: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+  .producto-fila img { width: 120px; height: 120px; object-fit: cover; border-radius: 50%; border: 4px solid #e1bee7; margin-right: 25px; }
   .info-prod h3 { margin: 0 0 5px 0; color: #49BA9A; font-size: 22px; }
   .info-prod p { margin: 0; font-size: 14px; line-height: 1.4; }
 
   .seccion-catalogo { max-width: 900px; margin: 50px auto; text-align: center; padding: 0 20px; }
-  .seccion-catalogo h2 { color: #F01329; font-size: 26px; margin-bottom: 30px; text-transform: uppercase;
-    letter-spacing: 1px; border-bottom: 2px solid #ab47bc; display: inline-block; padding-bottom: 10px; }
+  .seccion-catalogo h2 { color: #F01329; font-size: 26px; margin-bottom: 30px; text-transform: uppercase; letter-spacing: 1px; border-bottom: 2px solid #ab47bc; display: inline-block; padding-bottom: 10px; }
 
   .catalogo-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
-
-  .producto-mini { background: white; border: 1px solid #ddd; width: 200px; padding: 15px; border-radius: 8px;
-    text-align: center; transition: transform 0.2s; }
+  .producto-mini { background: white; border: 1px solid #ddd; width: 200px; padding: 15px; border-radius: 8px; text-align: center; transition: transform 0.2s; }
   .producto-mini:hover { transform: scale(1.03); border-color: #94228B; }
-
   .producto-mini img { width: 100%; height: 150px; object-fit: cover; border-radius: 4px; margin-bottom: 10px; }
   .producto-mini h4 { margin: 10px 0 5px 0; color: #13F026; font-size: 16px; }
   .precio { color: #E03AC4; font-weight: bold; font-size: 18px; display: block; }
 
   .contacto-seccion { background: #333; color: white; padding: 40px 20px; margin-top: 60px; }
   .contenedor-form { max-width: 600px; margin: 0 auto; }
-
   .contenedor-form h2 { text-align: center; color: #AED487; margin-bottom: 30px; }
   label { display: block; margin-bottom: 5px; font-size: 14px; color: #3EDE5E; }
-
-  input, select {
-    width: 100%; padding: 12px; margin-bottom: 20px; border: none; border-radius: 4px;
-    background: #1199D9; color: white; font-family: "Verdana", sans-serif;
-  }
-
-  button {
-    background: #ab47bc; color: white; width: 100%; padding: 15px; border: none;
-    font-size: 16px; font-weight: bold; cursor: pointer; text-transform: uppercase;
-    letter-spacing: 1px;
-  }
-
+  input, select { width: 100%; padding: 12px; margin-bottom: 20px; border: none; border-radius: 4px; background: #1199D9; color: white; font-family: "Verdana", sans-serif; }
+  button { background: #ab47bc; color: white; width: 100%; padding: 15px; border: none; font-size: 16px; font-weight: bold; cursor: pointer; text-transform: uppercase; letter-spacing: 1px; }
   button:hover { background: #ba68c8; }
 
   footer { text-align: center; padding: 20px; background: #5411D9; color: #fff; font-size: 12px; }
@@ -89,14 +55,62 @@
   <p>Descubre los mejores sabores de nuestros productos</p>
 </div>
 
-<!-- FORMULARIO CONECTADO A GOOGLE SHEETS -->
+<!-- PRODUCTOS DESTACADOS -->
+<div class="contenedor-lista">
+  <div class="producto-fila">
+    <img src="https://cdn.shopify.com/s/files/1/0558/7366/7206/files/Java-Chip.png?v=1759361131&width=600&height=600&crop=center" alt="Galletas">
+    <div class="info-prod">
+      <h3>Temporada</h3>
+      <p>Regala sonrisas únicas en esta temporada.</p>
+    </div>
+  </div>
+
+  <div class="producto-fila">
+    <img src="https://cdn.shopify.com/s/files/1/0558/7366/7206/files/Cakesters_Original.png?v=1759355634&width=600&height=600&crop=center" alt="Cakesters">
+    <div class="info-prod">
+      <h3>CAKETERS</h3>
+      <p>Diferentes sabores y tamaños.</p>
+    </div>
+  </div>
+</div>
+
+<!-- OFERTAS DEL MES -->
+<section class="seccion-catalogo">
+  <h2>Ofertas del Mes</h2>
+  <div class="catalogo-grid">
+    <div class="producto-mini">
+      <img src="https://cdn.shopify.com/s/files/1/0558/7366/7206/files/OREOiDGraduation-CookieTin-1.png?v=1761669896&width=800&height=800&crop=center" alt="Galletas">
+      <h4>OREOiD Holiday Cookie Tin</h4>
+      <span class="precio">$350.00</span>
+    </div>
+
+    <div class="producto-mini">
+      <img src="https://cdn.shopify.com/s/files/1/0558/7366/7206/files/OREO-Fudge-Less-Christmas-Tin-12CT-Cookies.png?v=1762369894&width=1200&height=1200&crop=center" alt="Caja de galletas">
+      <h4>OREOiD Fudge-less Holiday Cookie Tin</h4>
+      <span class="precio">$520.00</span>
+    </div>
+
+    <div class="producto-mini">
+      <img src="https://cdn.shopify.com/s/files/1/0558/7366/7206/files/OREOiD_-_Holidays_12ct_-_Red_Box-5.png?v=1761935529&width=1000&height=1000&crop=center" alt="Cajas de galletas">
+      <h4>OREOiD Holiday Cookies Red Box</h4>
+      <span class="precio">$690.00</span>
+    </div>
+
+    <div class="producto-mini">
+      <img src="https://cdn.shopify.com/s/files/1/0558/7366/7206/files/OREOiD_-_Holidays_12ct_-_Blue_Box_1_1.png?v=1761935530&width=1000&height=1000&crop=center" alt="Kit de galletas">
+      <h4>OREOiD Holidays Cookie Blue Box</h4>
+      <span class="precio">$780.00</span>
+    </div>
+  </div>
+</section>
+
+<!-- FORMULARIO -->
 <section class="contacto-seccion">
   <div class="contenedor-form">
     <h2>Únete o Haz tu Pedido</h2>
-
     <form id="contactForm"
       method="POST"
-      action="https://script.google.com/macros/s/AKfycbxQ6qf-voU69sah30EDmOBSNCGLUyd8d7g91FGn1Eg8oOHALR4IZWAleQKWYKw7RhCJ2w/exec">
+      action="https://script.google.com/macros/s/AKfycby8ftqlift6x5MNBGz0I0MmX0ALJS-7aA7-H8ApP9l6DSjQMVm4UvLwEn3Y4TW9r4l-sg/exec">
 
       <label for="cliente">Tu Nombre:</label>
       <input type="text" id="cliente" name="Nombre" required>
@@ -122,24 +136,12 @@
 
 <script>
 const form = document.getElementById("contactForm");
-
 form.addEventListener("submit", e => {
   e.preventDefault();
-
   const data = new FormData(form);
-
-  fetch(form.action, {
-    method: "POST",
-    body: data
-  })
-  .then(res => {
-    alert("✔ ¡Información enviada con éxito!");
-    form.reset();
-  })
-  .catch(err => {
-    alert("❌ Error al enviar los datos. Revisa tu Apps Script.");
-    console.error(err);
-  });
+  fetch(form.action, { method: "POST", body: data })
+    .then(res => { alert("✔ ¡Formulario enviado con éxito!"); form.reset(); })
+    .catch(err => { alert("❌ Error al enviar. Revisa tu Apps Script."); console.error(err); });
 });
 </script>
 
