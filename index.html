@@ -14,6 +14,7 @@
     color: #0C8A2B;
   }
 
+  /* ----- BARRA SUPERIOR ----- */
   nav {
     background: #87D9ED;
     padding: 15px 40px;
@@ -205,6 +206,13 @@
     background: #ba68c8;
   }
 
+  #mensaje {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 16px;
+    color: #fff;
+  }
+
   footer {
     text-align: center;
     padding: 20px;
@@ -212,7 +220,6 @@
     color: #fff;
     font-size: 12px;
   }
-
 </style>
 </head>
 
@@ -233,12 +240,12 @@
     <img src="https://cdn.shopify.com/s/files/1/0558/7366/7206/files/Java-Chip.png?v=1759361131&width=600&height=600&crop=center" alt="Galletas">
     <div class="info-prod">
       <h3>Temporada</h3>
-      <p>Regala sonrisas unicas en esta temporada.</p>
+      <p>Regala sonrisas únicas en esta temporada.</p>
     </div>
   </div>
 
   <div class="producto-fila">
-    <img src="https://cdn.shopify.com/s/files/1/0558/7366/7206/files/Cakesters_Original.png?v=1759355634&width=600&height=600&crop=center" alt="Caketers">
+    <img src="https://cdn.shopify.com/s/files/1/0558/7366/7206/files/Cakesters_Original.png?v=1759355634&width=600&height=600&crop=center" alt="Cakesters">
     <div class="info-prod">
       <h3>CAKETERS</h3>
       <p>Diferentes sabores y diferentes tamaños.</p>
@@ -280,8 +287,8 @@
   <div class="contenedor-form">
     <h2>Únete o Haz tu Pedido</h2>
 
-    <!-- FORMULARIO CLÁSICO -->
-    <form method="POST" action="https://script.google.com/macros/s/AKfycbzIuWsB7uuEgysas2LhygEOw_xzk53OpK42mJjZZ6NvVJWfLrsxOKyv1yRe_8zKIcg5YA/exec">
+    <!-- FORMULARIO CONECTADO A GOOGLE SHEETS -->
+    <form id="miFormulario">
       <label for="cliente">Tu Nombre:</label>
       <input type="text" id="cliente" name="Nombre" required>
 
@@ -297,13 +304,50 @@
 
       <button type="submit">Enviar Información</button>
     </form>
+
+    <div id="mensaje"></div>
   </div>
 </section>
 
 <footer>
-  © 2025 OREO México
+  © 2024 OREO México
 </footer>
+
+<script>
+const form = document.getElementById('miFormulario');
+const mensaje = document.getElementById('mensaje');
+
+form.addEventListener('submit', e => {
+  e.preventDefault(); // evita recargar la página
+
+  const data = new FormData(form);
+  const params = new URLSearchParams();
+  for (const pair of data) {
+    params.append(pair[0], pair[1]);
+  }
+
+  fetch('https://script.google.com/macros/s/AKfycbzIuWsB7uuEgysas2LhygEOw_xzk53OpK42mJjZZ6NvVJWfLrsxOKyv1yRe_8zKIcg5YA/exec', {
+    method: 'POST',
+    body: params
+  })
+  .then(response => response.json())
+  .then(json => {
+    if(json.result === 'success') {
+      mensaje.textContent = "¡Datos enviados correctamente! ✅";
+      form.reset();
+    } else {
+      mensaje.textContent = "Error al enviar los datos ❌";
+      console.log(json.error);
+    }
+  })
+  .catch(err => {
+    mensaje.textContent = "Error en la conexión ❌";
+    console.error(err);
+  });
+});
+</script>
 
 </body>
 </html>
+
 
